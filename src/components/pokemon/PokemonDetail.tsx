@@ -81,7 +81,7 @@ const PokemonDetail = () => {
                   </span>
                   <div className="flex flex-row items-center w-2/3 space-x-2 pr-2">
                     <div className="bg-gray-200 w-full h-1">
-                      <div className={"bg-blue-300 h-1 " + statWidth}></div>
+                      <div className={"bg-blue-300 h-1 w-10%"}></div>
                     </div>
                     <span className="w-2 text-sm font-medium">
                       {stat.base_stat}
