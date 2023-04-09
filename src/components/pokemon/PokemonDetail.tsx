@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import usePokemonApiDetail from "../../hooks/usePokemonApiDetail";
 import usePokemonApiDescription from "../../hooks/usePokemonApiDescription";
+import useGenerateStatStyle from "../../hooks/useGenerateStatStyle";
 
 import DetailShimmer from "../commons/DetailShimmer";
 
@@ -68,9 +69,7 @@ const PokemonDetail = () => {
           </div>
           <div className="flex flex-col space-y-4">
             {data.stats.map((stat) => {
-              const statWidth =
-                "w-" + Math.round(stat.base_stat / 10) * 10 + "%";
-
+              const statStyle = useGenerateStatStyle(stat.base_stat);
               return (
                 <div
                   key={stat.stat.name}
@@ -81,7 +80,7 @@ const PokemonDetail = () => {
                   </span>
                   <div className="flex flex-row items-center w-2/3 space-x-2 pr-2">
                     <div className="bg-gray-200 w-full h-1">
-                      <div className={"bg-blue-300 h-1 " + statWidth}></div>
+                      <div className={`${statStyle}`}></div>
                     </div>
                     <span className="w-2 text-sm font-medium">
                       {stat.base_stat}
