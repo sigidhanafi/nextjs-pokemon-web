@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 import usePokemonApiDetail from "../../hooks/usePokemonApiDetail";
 import usePokemonApiDescription from "../../hooks/usePokemonApiDescription";
+
+import DetailShimmer from "../commons/DetailShimmer";
 
 const PokemonDetail = () => {
   const router = useRouter();
@@ -17,7 +18,7 @@ const PokemonDetail = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col w-full">
-        <p>Loading content</p>
+        <DetailShimmer />
       </div>
     );
   }
