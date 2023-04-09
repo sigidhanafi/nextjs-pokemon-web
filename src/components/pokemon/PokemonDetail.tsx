@@ -41,7 +41,7 @@ const PokemonDetail = () => {
             <Image src={data.image} width={600} height={0} alt={"bulbasaur"} />
           </div>
           <div className="p-4">
-            <span className="text-blue-500 font-medium text-xl">
+            <span className="text-blue-500 font-medium text-xl capitalize">
               {data.name}
             </span>
             {description && (
@@ -75,7 +75,7 @@ const PokemonDetail = () => {
                   key={stat.stat.name}
                   className="flex flex-row items-center justify-between border border-b-blue-200 p-4"
                 >
-                  <span className="w-1/3 text-sm font-medium">
+                  <span className="w-1/3 text-sm font-medium capitalize">
                     {stat.stat.name}
                   </span>
                   <div className="flex flex-row items-center w-2/3 space-x-2 pr-2">
