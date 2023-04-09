@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, useEffect, useState } from "react";
 
-// import { Pokemon } from "@/models/pokemon";
-
 interface PorkemonCardProps {
   name: string;
   id: number;

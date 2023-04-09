@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
 
-// import { Pokemon } from "../../models/pokemon";
-
 import usePokemonApiList from "../../hooks/usePokemonApiList";
 
 import Pagination from "../commons/Pagination";

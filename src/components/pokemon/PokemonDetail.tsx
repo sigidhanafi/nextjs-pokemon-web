@@ -67,6 +67,9 @@ const PokemonDetail = () => {
           </div>
           <div className="flex flex-col space-y-4">
             {data.stats.map((stat) => {
+              const statWidth =
+                "w-" + Math.round(stat.base_stat / 10) * 10 + "%";
+
               return (
                 <div
                   key={stat.stat.name}
@@ -77,7 +80,7 @@ const PokemonDetail = () => {
                   </span>
                   <div className="flex flex-row items-center w-2/3 space-x-2 pr-2">
                     <div className="bg-gray-200 w-full h-1">
-                      <div className="bg-blue-300 w-1/3 h-1"></div>
+                      <div className={"bg-blue-300 h-1 " + statWidth}></div>
                     </div>
                     <span className="w-2 text-sm font-medium">
                       {stat.base_stat}
