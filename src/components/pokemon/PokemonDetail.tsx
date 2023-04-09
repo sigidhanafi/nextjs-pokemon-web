@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 import usePokemonApiDetail from "../../hooks/usePokemonApiDetail";
 import usePokemonApiDescription from "../../hooks/usePokemonApiDescription";
-import useGenerateStatStyle from "../../hooks/useGenerateStatStyle";
 
 import DetailShimmer from "../commons/DetailShimmer";
 
