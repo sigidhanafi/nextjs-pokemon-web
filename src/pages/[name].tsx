@@ -1,8 +1,29 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+
+import usePokemonApiDetail from "@/hooks/usePokemonApiDetail";
+import usePokemonApiDescription from "@/hooks/usePokemonApiDescription";
 
 import PokemonDetail from "@/components/pokemon/PokemonDetail";
+import DetailShimmer from "@/components/commons/DetailShimmer";
 
 const DetailPage = () => {
+  const router = useRouter();
+  const { query } = router;
+
+  let name = "";
+  if (
+    query.name &&
+    query.name != "" &&
+    query.name != undefined &&
+    !Array.isArray(query.name)
+  ) {
+    name = query.name;
+  }
+
+  const { error, isLoading, data, isSuccess } = usePokemonApiDetail(name);
+  const { data: description } = usePokemonApiDescription(name);
+
   return (
     <>
       <Head>
@@ -11,7 +32,25 @@ const DetailPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PokemonDetail />
+
+      {isLoading && (
+        <div className="flex flex-col w-full">
+          <DetailShimmer />
+        </div>
+      )}
+
+      {error && (
+        <div className="flex flex-col justify-center items-center w-full h-96">
+          <span className="text-gray-500">
+            Error when fetch the pokemon data.
+          </span>
+          <span className="text-gray-500">Please try again.</span>
+        </div>
+      )}
+
+      {isSuccess && data && description && (
+        <PokemonDetail data={data} description={description} />
+      )}
     </>
   );
 };
