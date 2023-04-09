@@ -18,11 +18,16 @@ const PokemonDetail = (props: {
           <Image src={data.image} width={600} height={0} alt={"bulbasaur"} />
         </div>
         <div className="p-4">
-          <span className="text-blue-500 font-medium text-xl capitalize">
+          <span
+            className="text-blue-500 font-medium text-xl capitalize"
+            data-testid="pokemon-detail-name"
+          >
             {data.name}
           </span>
           {description && (
-            <p>{description.flavor_text_entries[0].flavor_text}</p>
+            <p data-testid="pokemon-detail-description">
+              {description.flavor_text_entries[0].flavor_text}
+            </p>
           )}
         </div>
         <div className="flex justify-start space-x-2 bg-white p-2 rounded-br-lg rounded-bl-lg">
@@ -31,6 +36,7 @@ const PokemonDetail = (props: {
               <div
                 key={type.type.name}
                 className="rounded-full border-blue-300 border px-3 py-1"
+                data-testid="pokemon-detail-type"
               >
                 {type.type.name}
               </div>
@@ -48,6 +54,7 @@ const PokemonDetail = (props: {
               <div
                 key={stat.stat.name}
                 className="flex flex-row items-center justify-between border border-b-blue-200 p-4"
+                data-testid="pokemon-detail-stat"
               >
                 <span className="w-1/3 text-sm font-medium capitalize">
                   {stat.stat.name}
