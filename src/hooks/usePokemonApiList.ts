@@ -3,18 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import request from "../services/request";
 
-interface PokemonListData {
-  id: number;
-  name: string;
-  url: string;
-  image: string;
-}
-
-interface PokemonListResponse {
-  count: number;
-  next: string;
-  results: PokemonListData[];
-}
+import { PokemonListResponse } from "@/models/pokemon";
 
 export default function usePokemonApiList(initialPage: number) {
   const [page, setPage] = useState(initialPage);

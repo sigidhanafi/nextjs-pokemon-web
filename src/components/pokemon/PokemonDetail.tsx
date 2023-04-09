@@ -1,37 +1,9 @@
 import Image from "next/image";
 
-interface PokemonDetailResponseStat {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-
-interface PokemonDetailResponseAbility {
-  ability: { name: string };
-}
-
-interface PokemonDetailResponseType {
-  type: { name: string };
-}
-
-interface PokemonDetailResponse {
-  id: number;
-  name: string;
-  image: string;
-  abilities: PokemonDetailResponseAbility[];
-  types: PokemonDetailResponseType[];
-  stats: PokemonDetailResponseStat[];
-  weight: number;
-}
-
-interface FlavorTextEntry {
-  flavor_text: string;
-}
-
-interface PokemonDescriptionResponse {
-  flavor_text_entries: FlavorTextEntry[];
-}
+import {
+  PokemonDescriptionResponse,
+  PokemonDetailResponse,
+} from "@/models/pokemon";
 
 const PokemonDetail = (props: {
   data: PokemonDetailResponse;

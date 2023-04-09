@@ -1,30 +1,7 @@
-import request from "@/services/request";
 import { useQuery } from "@tanstack/react-query";
+import request from "@/services/request";
 
-interface PokemonDetailResponseStat {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-
-interface PokemonDetailResponseAbility {
-  ability: { name: string };
-}
-
-interface PokemonDetailResponseType {
-  type: { name: string };
-}
-
-interface PokemonDetailResponse {
-  id: number;
-  name: string;
-  image: string;
-  abilities: PokemonDetailResponseAbility[];
-  types: PokemonDetailResponseType[];
-  stats: PokemonDetailResponseStat[];
-  weight: number;
-}
+import { PokemonDetailResponse } from "@/models/pokemon";
 
 export default function usePokemonApiDetail(name: string) {
   const fetchDetail = async (name: string): Promise<PokemonDetailResponse> => {

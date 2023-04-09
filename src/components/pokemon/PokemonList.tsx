@@ -1,11 +1,6 @@
 import PokemonCard from "./PokemonCard";
 
-interface PokemonListData {
-  id: number;
-  name: string;
-  url: string;
-  image: string;
-}
+import { PokemonListData } from "@/models/pokemon";
 
 const PokemonList = (props: { data: PokemonListData[] }) => {
   return (

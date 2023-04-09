@@ -1,13 +1,7 @@
 import request from "@/services/request";
 import { useQuery } from "@tanstack/react-query";
 
-interface FlavorTextEntry {
-  flavor_text: string;
-}
-
-interface PokemonDescriptionResponse {
-  flavor_text_entries: FlavorTextEntry[];
-}
+import { PokemonDescriptionResponse } from "@/models/pokemon";
 
 export default function usePokemonApiDescription(name: string) {
   const fetchDescription = async (
