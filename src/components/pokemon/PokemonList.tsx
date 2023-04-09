@@ -52,6 +52,18 @@ const PokemonList = () => {
     );
   }
 
+  // success but result is empty
+  // case: user input higer pagination ex: 10000
+  if (isSuccess && data && data.results && data.results.length <= 0) {
+    return (
+      <div className="flex flex-col justify-center items-center w-full h-96">
+        <span className="text-gray-500">Empty result</span>
+        <span className="text-gray-500">Please try again.</span>
+      </div>
+    );
+  }
+
+  // success
   if (isSuccess && data) {
     return (
       <div>
