@@ -9,13 +9,15 @@ const Pagination = (props: {
         className="bg-blue-200 px-2 rounded-md text-center disabled:bg-gray-200"
         onClick={props.onPrev}
         disabled={props.page <= 1}
+        data-testid="prev-button"
       >
         Prev
       </button>
-      <span>{props.page}</span>
+      <span data-testid="page-number">{props.page}</span>
       <button
         className="bg-blue-200 px-2 rounded-md text-center"
         onClick={props.onNext}
+        data-testid="next-button"
       >
         Next
       </button>
