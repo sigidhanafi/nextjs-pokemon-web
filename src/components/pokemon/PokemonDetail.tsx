@@ -48,12 +48,12 @@ const PokemonDetail = (props: {
         <div className="p-4 bg-blue-300">
           <span className="text-white font-medium text-xl">Base Stat</span>
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col">
           {data.stats.map((stat) => {
             return (
               <div
                 key={stat.stat.name}
-                className="flex flex-row items-center justify-between border border-b-blue-200 p-4"
+                className="flex flex-row items-center justify-between border-b-blue-200 border-b p-4"
                 data-testid="pokemon-detail-stat"
               >
                 <span className="w-1/3 text-sm font-medium capitalize">
